@@ -4,21 +4,119 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradiente"
     tools:context=".MainActivity">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="214dp"
-        android:layout_height="77dp"
-        app:cardCornerRadius="180dp"
+        android:id="@+id/cardView2"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        app:cardBackgroundColor="#120042"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <ImageButton
-            android:id="@+id/imageButton"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:backgroundTint="#120042"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/mazomenos" />
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <ImageButton
+                android:id="@+id/imageButtonMaisMenos"
+                android:layout_width="214dp"
+                android:layout_height="73dp"
+                android:backgroundTint="#120042"
+                android:contentDescription="Hábitos"
+                android:scaleType="centerInside"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/mazomenos" />
+
+            <ImageButton
+                android:id="@+id/imageButtonTarefas"
+                android:layout_width="198dp"
+                android:layout_height="64dp"
+                android:backgroundTint="#120042"
+                android:contentDescription="Tarefas"
+                android:scaleType="centerInside"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/checkbox" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="400dp"
+        android:layout_height="165dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:layout_width="match_parent"
+            android:background="@drawable/gradiente"
+            android:layout_height="match_parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/CircularAvatar"
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/avatar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.494" />
+
+            <ProgressBar
+                android:id="@+id/progressBarVida"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="151dp"
+                android:layout_height="131dp"
+                android:indeterminateTint="#FF0000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ProgressBar
+                android:id="@+id/progressBarXP"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="157dp"
+                android:layout_height="28dp"
+                android:layout_marginTop="52dp"
+                android:layout_marginEnd="88dp"
+                android:indeterminateTint="#FFFF00"
+                android:max="100"
+                android:min="0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/progressBarVida"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <FrameLayout
+        android:id="@+id/framelayout"
+        android:layout_width="409dp"
+        android:layout_height="492dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
