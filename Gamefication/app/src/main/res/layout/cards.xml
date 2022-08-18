@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="369dp"
+        android:layout_height="187dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/imageButtonFazer"
+                android:layout_width="67dp"
+                android:layout_height="match_parent"
+                android:backgroundTint="@android:color/holo_blue_bright"
+                android:contentDescription="@string/fazer"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/ic_menu_add" />
+
+            <ImageButton
+                android:id="@+id/imageButtonRemover"
+                android:layout_width="63dp"
+                android:layout_height="179dp"
+                android:backgroundTint="@android:color/holo_red_light"
+                android:contentDescription="@string/remover"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/ic_menu_delete" />
+
+            <TextView
+                android:id="@+id/textViewCardTitulo"
+                android:layout_width="182dp"
+                android:layout_height="39dp"
+                android:layout_marginTop="28dp"
+                android:text="@string/t_tulo"
+                android:textAlignment="viewStart"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/imageButtonRemover"
+                app:layout_constraintStart_toEndOf="@+id/imageButtonFazer"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewDesc"
+                android:layout_width="187dp"
+                android:layout_height="86dp"
+                android:text="@string/descri_o"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/textViewCardTitulo"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/textViewCardTitulo"
+                app:layout_constraintTop_toBottomOf="@+id/textViewCardTitulo"
+                app:layout_constraintVertical_bias="0.238" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

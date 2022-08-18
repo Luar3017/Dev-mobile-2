@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradiente"
     tools:context=".MainActivity">
 
     <androidx.cardview.widget.CardView
@@ -32,7 +31,7 @@
                 android:layout_width="214dp"
                 android:layout_height="73dp"
                 android:backgroundTint="#120042"
-                android:contentDescription="Hábitos"
+                android:contentDescription="@string/h_bitos"
                 android:scaleType="centerInside"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -44,7 +43,7 @@
                 android:layout_width="198dp"
                 android:layout_height="64dp"
                 android:backgroundTint="#120042"
-                android:contentDescription="Tarefas"
+                android:contentDescription="@string/tarefas"
                 android:scaleType="centerInside"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -57,8 +56,13 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="400dp"
-        android:layout_height="165dp"
+        android:layout_width="390dp"
+        android:layout_height="176dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:elevation="5dp"
+        app:cardCornerRadius="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -67,8 +71,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
 
             android:layout_width="match_parent"
-            android:background="@drawable/gradiente"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@drawable/gradiente">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/CircularAvatar"
@@ -79,7 +83,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.494" />
+                app:layout_constraintVertical_bias="0.494"
+                tools:ignore="ImageContrastCheck" />
 
             <ProgressBar
                 android:id="@+id/progressBarVida"
@@ -98,13 +103,42 @@
                 android:layout_height="28dp"
                 android:layout_marginTop="52dp"
                 android:layout_marginEnd="88dp"
+                android:indeterminate="true"
                 android:indeterminateTint="#FFFF00"
                 android:max="100"
                 android:min="0"
+                android:progress="100"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@+id/progressBarVida"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewNomeUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/user"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/progressBarVida"
+                app:layout_constraintHorizontal_bias="0.489"
+                app:layout_constraintStart_toStartOf="@+id/CircularAvatar"
+                app:layout_constraintTop_toBottomOf="@+id/CircularAvatar" />
+
+            <TextView
+                android:id="@+id/textViewXP"
+                android:layout_width="46dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="1dp"
+                android:text="@string/xp"
+                android:textColor="#ADBAC0"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/progressBarXP"
+                app:layout_constraintTop_toBottomOf="@+id/progressBarXP"
+                app:layout_constraintVertical_bias="0.0" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

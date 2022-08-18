@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Gamefication</string>
+    <string name="h_bitos">Hábitos</string>
+    <string name="tarefas">Tarefas</string>
+    <string name="user">User</string>
+    <string name="xp">XP</string>
+    <string name="fazer">Fazer</string>
+    <string name="remover">Remover</string>
+    <string name="t_tulo">Título</string>
+    <string name="descri_o">Descrição</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
