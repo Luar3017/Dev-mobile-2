@@ -27,7 +27,7 @@
                 app:layout_constraintGuide_percent="0.5" />
 
             <ImageButton
-                android:id="@+id/imageButtonMaisMenos"
+                android:id="@+id/imageButtonHabitos"
                 android:layout_width="214dp"
                 android:layout_height="73dp"
                 android:backgroundTint="#120042"
@@ -61,7 +61,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:elevation="5dp"
+        app:cardElevation="215dp"
         app:cardCornerRadius="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

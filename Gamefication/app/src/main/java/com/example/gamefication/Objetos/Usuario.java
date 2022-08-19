@@ -5,13 +5,13 @@ import android.widget.ImageView;
 public class Usuario {
     String nome;
     int sexo; // se for implementado
-    ImageView foto;
+    String foto;
 
-    public ImageView getFoto() {
+    public String getFoto() {
         return foto;
     }
 
-    public void setFoto(ImageView foto) {
+    public void setFoto(String foto) {
         this.foto = foto;
     }
 
