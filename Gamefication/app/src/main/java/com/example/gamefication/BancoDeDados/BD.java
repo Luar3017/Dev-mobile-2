@@ -3,6 +3,7 @@ package com.example.gamefication.BancoDeDados;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -22,7 +23,7 @@ public class BD extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String sqlPessoa = "CREATE TABLE IF NOT EXISTS pessoa (id INTEGER PRIMARY KEY AUTOINCREMENT, nome VARCHAR(20), sexo INTEGER, foto VARCHAR(10));";
+        String sqlPessoa = "CREATE TABLE IF NOT EXISTS pessoa (id INTEGER PRIMARY KEY AUTOINCREMENT, nome VARCHAR(20), sexo INTEGER, foto VARCHAR(10), nivel INTEGER, moedas DOUBLE);";
         String sqlHabito = "CREATE TABLE IF NOT EXISTS habito (id INTEGER PRIMARY KEY AUTOINCREMENT, tituloH VARCHAR(20), observacaoH VARCHAR(30), positivoH INTEGER, negativoH INTEGER, dificuldadeH INTEGER);";
         String sqlTarefa = "CREATE TABLE IF NOT EXISTS tarefa (id INTEGER PRIMARY KEY AUTOINCREMENT, tituloT VARCHAR(20), observacaoT VARCHAR(30), positivoT INTEGER, negativoT INTEGER, dificuldadeT INTEGER);";
         sqLiteDatabase.execSQL(sqlPessoa);
@@ -47,6 +48,8 @@ public class BD extends SQLiteOpenHelper {
         contentValues.put("nome", pessoa.getNome());
         contentValues.put("sexo", pessoa.getSexo());
         contentValues.put("foto", pessoa.getFoto());
+        contentValues.put("nivel", pessoa.getNivel());
+        contentValues.put("moedas", pessoa.getMoedas());
         database.insert("pessoa", null, contentValues);
     }
 
@@ -57,6 +60,10 @@ public class BD extends SQLiteOpenHelper {
         while (cursor.moveToNext()){
             Usuario usuario = new Usuario();
             usuario.setNome(cursor.getString(1));
+            usuario.setSexo(cursor.getInt(2));
+            usuario.setFoto(cursor.getString(3));
+            usuario.setNivel(cursor.getInt(4));
+            usuario.setMoedas(cursor.getDouble(5));
             lista.add(usuario);
         }
         return lista;
@@ -114,5 +121,24 @@ public class BD extends SQLiteOpenHelper {
             listaTarefas.add(tarefas);
         }
         return listaTarefas;
+    }
+
+    public void RemoveHabito(long idHabito){
+        SQLiteDatabase database = getWritableDatabase();
+        String sql = "DELETE FROM habito WHERE id = " + "'" + idHabito + "'";
+        try {
+            database.execSQL(sql);
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+    public void RemoveTarefa(long idTarefa){
+        SQLiteDatabase database = getWritableDatabase();
+        String sql = "DELETE FROM tarefa WHERE id = " + "'" + idTarefa + "'";
+        try {
+            database.execSQL(sql);
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
     }
 }

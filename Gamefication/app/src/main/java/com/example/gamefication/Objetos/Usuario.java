@@ -3,9 +3,25 @@ package com.example.gamefication.Objetos;
 import android.widget.ImageView;
 
 public class Usuario {
-    String nome;
-    int sexo; // se for implementado
-    String foto;
+    String nome, foto;
+    int sexo, nivel; // se for implementado
+    double moedas;
+
+    public int getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
+    }
+
+    public double getMoedas() {
+        return moedas;
+    }
+
+    public void setMoedas(double moedas) {
+        this.moedas = moedas;
+    }
 
     public String getFoto() {
         return foto;

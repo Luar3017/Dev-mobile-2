@@ -7,10 +7,6 @@
     tools:context=".Fragments.FragmentTarefas">
 
     <!-- TODO: Update blank fragment layout -->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
         <TextView
             android:id="@+id/TvTarefa"
             android:layout_width="match_parent"
@@ -44,12 +40,10 @@
             android:layout_marginBottom="32dp"
             android:clickable="true"
             android:contentDescription="@string/adicionar"
-            android:src="@android:drawable/ic_input_add"
-            app:backgroundTint="#2196F3"
             android:focusable="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_marginStart="310dp"
+            android:layout_marginTop="360dp"
+            android:src="@android:drawable/ic_input_add"
+            app:backgroundTint="#2196F3" />
 
 </FrameLayout>
