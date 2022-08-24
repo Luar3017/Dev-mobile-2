@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Dev gameficacao/Dev-mobile-2/Gamefication/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1315" />
+        <entry key="..\:/Dev gameficacao/Dev-mobile-2/Gamefication/app/src/main/res/drawable/edit_background.xml" value="0.1315" />
         <entry key="..\:/Dev gameficacao/Dev-mobile-2/Gamefication/app/src/main/res/drawable/gradiente.xml" value="0.1635" />
+        <entry key="..\:/Dev gameficacao/Dev-mobile-2/Gamefication/app/src/main/res/drawable/ic_erro_aviso_foreground.xml" value="0.1315" />
+        <entry key="..\:/Dev gameficacao/Dev-mobile-2/Gamefication/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1315" />
         <entry key="..\:/Dev gameficacao/Dev-mobile-2/Gamefication/app/src/main/res/drawable/saveicon.xml" value="0.1315" />
         <entry key="..\:/Dev gameficacao/Dev-mobile-2/Gamefication/app/src/main/res/layout/activity_adicionar_habitos.xml" value="0.25416666666666665" />
         <entry key="..\:/Dev gameficacao/Dev-mobile-2/Gamefication/app/src/main/res/layout/activity_main.xml" value="0.25" />

@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/btnActSalvar"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.adicionarHabitos">
@@ -22,14 +23,16 @@
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
                 android:text="@string/string_cardtitulohab"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName"
+                android:id="@+id/editTextTextTitulo"
                 android:layout_width="354dp"
                 android:layout_height="58dp"
+                android:layout_marginStart="32dp"
                 android:layout_marginTop="8dp"
                 android:autofillHints=""
                 android:ems="10"
@@ -46,6 +49,7 @@
                 android:id="@+id/editTextTextDesc"
                 android:layout_width="354dp"
                 android:layout_height="58dp"
+                android:layout_marginStart="32dp"
                 android:layout_marginTop="8dp"
                 android:autofillHints=""
                 android:ems="10"
@@ -62,10 +66,11 @@
                 android:id="@+id/textViewCardAddDesc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
                 android:layout_marginTop="16dp"
                 android:text="@string/descri_o_do_h_bito"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextTitulo" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -81,4 +86,37 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardviewAddHabito" />
+
+    <Button
+        android:id="@+id/btnActCancelar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/cancelar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/edit_background"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonSalvar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/salvar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/edit_background"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <SeekBar
+        android:id="@+id/seekBarDificuldade"
+        android:layout_width="352dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDificuldade" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

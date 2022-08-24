@@ -16,4 +16,6 @@
     <string name="digite_a_descri_o">Digite a descrição</string>
     <string name="descri_o_do_h_bito">Descrição do Hábito</string>
     <string name="dificuldade">Dificuldade</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="salvar">Salvar</string>
 </resources>
