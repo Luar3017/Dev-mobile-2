@@ -1,5 +1,6 @@
 package com.example.gamefication.RecyclerView;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,15 +9,19 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.gamefication.Objetos.Habito;
 import com.example.gamefication.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HabitoAdapter extends RecyclerView.Adapter<HabitoViewHolder>{
-    List<String> listaHabitos;
+    Context context;
+    List<Habito> listaHabitos;
 
-    public HabitoAdapter(List<String> listaHabitos) {
+    public HabitoAdapter(Context context, List<Habito> listaHabitos) {
         this.listaHabitos = listaHabitos;
+        this.context = context;
     }
 
     @NonNull
@@ -28,8 +33,9 @@ public class HabitoAdapter extends RecyclerView.Adapter<HabitoViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull HabitoViewHolder holder, int position) {
-        holder.titulo.setText(listaHabitos.get(position));
-        holder.descricao.setText(listaHabitos.get(position));
+        Habito habitos = listaHabitos.get(position);
+        holder.CardTitulo.setText(habitos.getTituloH());
+        holder.CardDesc.setText(habitos.getObservacaoH());
     }
 
     @Override
@@ -39,14 +45,14 @@ public class HabitoAdapter extends RecyclerView.Adapter<HabitoViewHolder>{
 }
 
 class HabitoViewHolder extends RecyclerView.ViewHolder{
-    TextView titulo, descricao;
+    TextView CardTitulo, CardDesc;
     HabitoAdapter adapter;
 
     public HabitoViewHolder(@NonNull View itemView) {
         super(itemView);
 
-        titulo = itemView.findViewById(R.id.textViewCardTitulo);
-        descricao = itemView.findViewById(R.id.textViewDesc);
+        CardTitulo = itemView.findViewById(R.id.CardTitulo);
+        CardDesc = itemView.findViewById(R.id.CardDesc);
         itemView.findViewById(R.id.imageButtonFazer).setOnClickListener(view -> {
             // Implementar
         });

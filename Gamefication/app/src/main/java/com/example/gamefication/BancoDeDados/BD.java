@@ -24,8 +24,8 @@ public class BD extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         String sqlPessoa = "CREATE TABLE IF NOT EXISTS pessoa (id INTEGER PRIMARY KEY AUTOINCREMENT, nome VARCHAR(20), sexo INTEGER, foto VARCHAR(10), nivel INTEGER, moedas DOUBLE);";
-        String sqlHabito = "CREATE TABLE IF NOT EXISTS habito (id INTEGER PRIMARY KEY AUTOINCREMENT, tituloH VARCHAR(20), observacaoH VARCHAR(30), positivoH INTEGER, negativoH INTEGER, dificuldadeH INTEGER);";
-        String sqlTarefa = "CREATE TABLE IF NOT EXISTS tarefa (id INTEGER PRIMARY KEY AUTOINCREMENT, tituloT VARCHAR(20), observacaoT VARCHAR(30), positivoT INTEGER, negativoT INTEGER, dificuldadeT INTEGER);";
+        String sqlHabito = "CREATE TABLE IF NOT EXISTS habito (id INTEGER PRIMARY KEY AUTOINCREMENT, tituloH VARCHAR(20), observacaoH VARCHAR(30), dificuldadeH INTEGER);";
+        String sqlTarefa = "CREATE TABLE IF NOT EXISTS tarefa (id INTEGER PRIMARY KEY AUTOINCREMENT, tituloT VARCHAR(20), observacaoT VARCHAR(30), dificuldadeT INTEGER);";
         sqLiteDatabase.execSQL(sqlPessoa);
         sqLiteDatabase.execSQL(sqlHabito);
         sqLiteDatabase.execSQL(sqlTarefa);
@@ -74,8 +74,6 @@ public class BD extends SQLiteOpenHelper {
         ContentValues contentValues = new ContentValues();
         contentValues.put("tituloH", habito.getTituloH());
         contentValues.put("observacaoH", habito.getObservacaoH());
-        contentValues.put("positivoH", habito.getPositivoH());
-        contentValues.put("negativoH", habito.getNegativoH());
         contentValues.put("dificudadeH", habito.getDificuldadeH());
         database.insert("habito", null, contentValues);
     }
@@ -88,8 +86,6 @@ public class BD extends SQLiteOpenHelper {
             Habito habito = new Habito();
             habito.setTituloH(cursor.getString(1));
             habito.setObservacaoH(cursor.getString(2));
-            habito.setPositivoH(cursor.getInt(3));
-            habito.setNegativoH(cursor.getInt(4));
             habito.setDificuldadeH(cursor.getInt(5));
             listaHabitos.add(habito);
         }
@@ -101,8 +97,6 @@ public class BD extends SQLiteOpenHelper {
         ContentValues contentValues = new ContentValues();
         contentValues.put("tituloT", task.getTituloT());
         contentValues.put("observacaoT", task.getObservacaoT());
-        contentValues.put("positivoT", task.getPositivoT());
-        contentValues.put("negativoT", task.getNegativoT());
         contentValues.put("dificudadeT", task.getDificuldadeT());
         database.insert("tarefa", null, contentValues);
     }
@@ -115,8 +109,6 @@ public class BD extends SQLiteOpenHelper {
             Tarefas tarefas = new Tarefas();
             tarefas.setTituloT(cursor.getString(1));
             tarefas.setObservacaoT(cursor.getString(2));
-            tarefas.setPositivoT(cursor.getInt(3));
-            tarefas.setNegativoT(cursor.getInt(4));
             tarefas.setDificuldadeT(cursor.getInt(5));
             listaTarefas.add(tarefas);
         }

@@ -2,7 +2,7 @@ package com.example.gamefication.Objetos;
 
 public class Habito {
    private String tituloH, observacaoH;
-   private int positivoH, negativoH, dificuldadeH;
+   private int  dificuldadeH;
 
     public String getTituloH() {
         return tituloH;
@@ -18,22 +18,6 @@ public class Habito {
 
     public void setObservacaoH(String observacaoH) {
         this.observacaoH = observacaoH;
-    }
-
-    public int getPositivoH() {
-        return positivoH;
-    }
-
-    public void setPositivoH(int positivoH) {
-        this.positivoH = positivoH;
-    }
-
-    public int getNegativoH() {
-        return negativoH;
-    }
-
-    public void setNegativoH(int negativoH) {
-        this.negativoH = negativoH;
     }
 
     public int getDificuldadeH() {

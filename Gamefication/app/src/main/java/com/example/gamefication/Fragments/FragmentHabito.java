@@ -2,8 +2,10 @@ package com.example.gamefication.Fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
+
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -11,13 +13,22 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.gamefication.Activities.adicionarHabitos;
+import com.example.gamefication.BancoDeDados.BD;
+import com.example.gamefication.Objetos.Habito;
 import com.example.gamefication.R;
+import com.example.gamefication.RecyclerView.HabitoAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class FragmentHabito extends Fragment {
     RecyclerView recyclerView;
     FloatingActionButton add;
+    HabitoAdapter adapter;
+    List<Habito> listaHabitos;
+    FragmentActivity fragmentActivity = getActivity();
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -55,14 +66,19 @@ public class FragmentHabito extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_habito, container, false);
-       recyclerView = view.findViewById(R.id.recyclerViewHabito);
+        recyclerView = view.findViewById(R.id.recyclerViewHabito);
         add = view.findViewById(R.id.floatingActionButtonAddHabito);
+        listaHabitos = new ArrayList<>();
+        BD Listar = new BD(fragmentActivity);
+        adapter = new HabitoAdapter(fragmentActivity, listaHabitos);
+        recyclerView.set
+
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FragmentActivity fragmentActivity = getActivity();
-                if(fragmentActivity != null){
+                if (fragmentActivity != null) {
                     startActivity(new Intent(fragmentActivity, adicionarHabitos.class));
                 }
             }
